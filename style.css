@@ -387,6 +387,21 @@ form textarea {
     margin: 0;
     font-size: 1.5rem;
 }
+.modal h4 {
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+.modal ul {
+    padding: 0;
+}
+.modal li {
+    color: white;
+    text-align: center;
+}
+.modal span {
+    color: var(--primary);
+}
 
 .project-link {
     text-align: center;
