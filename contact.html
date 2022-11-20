@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Robin Bergstrand - Contact</title>
+    </head>
+    <body>
+        <header>
+            <h1>Robin<br />Bergstrand</h1>
+            <nav>
+                <a href="index.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="education.html">Education</a>
+                <a href="contact.html" class="active-page">Contact</a>
+            </nav>
+        </header>
+        <div class="wrapper">
+            <main class="main-contact">
+                <form action="send-email">
+                    <label for="email">Email</label>
+                    <input
+                        type="text"
+                        name="email"
+                        id="email"
+                        placeholder="John.Doe@domain.com"
+                    />
+                    <label for="subject">Subject</label>
+                    <input
+                        type="text"
+                        name="subject"
+                        id="subject"
+                        placeholder="Regarding.."
+                    />
+                    <label for="message">Message</label>
+                    <textarea
+                        name="message"
+                        id="message"
+                        placeholder="Your message.."
+                    ></textarea>
+                    <button class="send-button">Send</button>
+                </form>
+            </main>
+        </div>
+        <footer>
+            Copyright © 2022 Robin Bergstrand.
+            <div class="social-media">
+                <img
+                    class="facebook"
+                    src="images/icons/facebook-app-logo-svgrepo-com.svg"
+                    alt="facebook logo"
+                />
+                <img
+                    class="twitter"
+                    src="images/icons/twitter-svgrepo-com.svg"
+                    alt="twitter logo"
+                />
+                <img
+                    class="linkedin"
+                    src="images/icons/linkedin-svgrepo-com.svg"
+                    alt="linkedin logo"
+                />
+            </div>
+        </footer>
+    </body>
+</html>

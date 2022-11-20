@@ -1,0 +1,484 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+* {
+    box-sizing: border-box;
+    font-family: "Karla", sans-serif;
+}
+
+*::selection {
+    background-color: var(--primary);
+}
+
+:root {
+    --primary: rgb(255, 0, 128);
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+header {
+    border-block: 2px solid var(--primary);
+    width: 100%;
+    margin-bottom: 1rem;
+    padding-block: 0.5rem;
+    padding-inline: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+h1 {
+    margin-right: auto;
+    border-right: 2px solid var(--primary);
+    border-left: 2px solid var(--primary);
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    padding-block: 0.2rem;
+    color: white;
+}
+
+.active-page {
+    color: var(--primary);
+}
+
+nav a {
+    all: unset;
+    cursor: pointer;
+    font-size: min(2vw, 2em);
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    color: white;
+    position: relative;
+    transition: all 100ms;
+    padding-block: 0.2rem;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 100%;
+    height: 2px;
+    background-color: white;
+    transition: all 300ms ease-in;
+}
+
+nav a::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 100%;
+    height: 2px;
+    background-color: white;
+    transition: all 300ms ease-in;
+}
+
+nav a:hover {
+    transform: scale(0.9);
+}
+
+nav a:hover:after {
+    right: 0;
+    background-color: var(--primary);
+}
+
+nav a:hover:before {
+    left: 0;
+    background-color: var(--primary);
+}
+.wrapper {
+    margin: 0 auto;
+    max-width: 70rem;
+    min-height: 600px;
+    display: flex;
+    gap: 1rem;
+}
+
+aside {
+    border: 2px solid var(--primary);
+    flex-grow: 1;
+    flex-basis: 400px;
+}
+
+main {
+    border-inline: 2px solid var(--primary);
+    flex-grow: 1;
+}
+
+.main-about {
+    display: unset;
+    padding: 2rem;
+    font-size: 3rem;
+    color: white;
+}
+
+.main-about h2 {
+    margin: 0;
+}
+
+.aside-skillset,
+.aside-education {
+    padding: 2rem;
+    color: white;
+}
+
+.aside-skillset h3,
+.aside-education h3 {
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.aside-skillset ul,
+.aside-education ul {
+    font-size: 1.5rem;
+}
+.employment-list span {
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.main-projects {
+    display: grid;
+    height: 600px;
+}
+
+.main-projects h2 {
+    text-align: center;
+}
+
+.main-education {
+    display: unset;
+    padding: 2rem;
+    font-size: 3rem;
+    color: white;
+}
+.main-education h2 {
+    margin: 0;
+}
+
+.main-contact {
+    display: grid;
+    place-items: center;
+    font-size: 3rem;
+    color: white;
+}
+
+footer {
+    border-block: 2px solid var(--primary);
+    width: 100%;
+    height: 10rem;
+    margin-top: 1rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: white;
+    flex-direction: column;
+}
+
+footer img {
+    height: 30px;
+    cursor: pointer;
+}
+
+.social-media {
+    display: flex;
+    gap: 2em;
+}
+
+.facebook:hover {
+    filter: invert(28%) sepia(62%) saturate(843%) hue-rotate(187deg)
+        brightness(50%) contrast(79%);
+}
+
+.twitter:hover {
+    filter: invert(28%) sepia(62%) saturate(10000%) hue-rotate(187deg)
+        brightness(100%) contrast(100%);
+}
+
+.linkedin:hover {
+    filter: invert(28%) sepia(62%) saturate(10000%) hue-rotate(187deg)
+        brightness(100%) contrast(100%);
+}
+
+/* MAKING CONTACT FORM */
+
+form {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    row-gap: 1.5rem;
+    width: min(600px, 80vw);
+}
+form label {
+    font-size: 1.5rem;
+}
+
+form input[type="text"] {
+    /* width: 500px; */
+    font-size: 1rem;
+    padding: 0.5rem;
+    background-color: unset;
+    border: unset;
+    border-bottom: 2px solid var(--primary);
+    color: white;
+}
+
+form textarea {
+    height: 150px;
+    font-size: 1rem;
+    padding: 0.5rem;
+    resize: none;
+    background-color: unset;
+    border: unset;
+    border: 2px solid var(--primary);
+    color: white;
+}
+
+.send-button {
+    grid-column: span 2;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    border: 2px solid var(--primary);
+    background-color: unset;
+    color: var(--primary);
+    letter-spacing: 0.5rem;
+    position: relative;
+    transition: all 300ms ease-in;
+}
+
+.send-button:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.send-button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0%;
+    background-color: white;
+    transition: all 300ms ease-in;
+    z-index: -1;
+}
+
+.send-button:hover::after {
+    width: 100%;
+    background-color: var(--primary);
+}
+
+/* EXPERIMENTING WITH CARUOUSEL  */
+
+.carousel {
+    height: 100%;
+    width: 100%;
+    background-color: hsl(100, 50%, 50%, 20%);
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    display: flex;
+    scrollbar-color: var(--primary) black;
+}
+
+.carousel::-webkit-scrollbar {
+    background-color: black;
+}
+.carousel::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+}
+.project {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: royalblue;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.one {
+    background-color: royalblue;
+}
+
+.one img {
+    height: 80%;
+}
+
+.two {
+    background-color: crimson;
+}
+
+.two img {
+    height: 80%;
+}
+
+.three {
+    background-color: darkorange;
+}
+
+.three img {
+    height: 80%;
+}
+
+/* EXPERIMENT WITH MODAL IN CAROUSEL */
+.carousel div {
+    position: relative;
+}
+
+.carousel div a {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    opacity: 0%;
+    background-color: rgba(201, 196, 196, 0.445);
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms;
+}
+
+.modal-container {
+    background-color: rgb(0, 0, 2);
+    border: 2px solid var(--primary);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal h3,
+.modal p {
+    color: white;
+    text-align: center;
+}
+
+.modal h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.project-link {
+    text-align: center;
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.close-modal {
+    display: inline-block;
+    color: var(--primary);
+    text-decoration: none;
+    border: 2px solid var(--primary);
+    padding-block: 0.5rem;
+    padding-inline: 2rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-left: auto;
+    position: relative;
+    transition: all 300ms ease-in;
+    z-index: 1;
+}
+
+.close-modal:hover {
+    color: white;
+}
+
+.close-modal::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    background-color: white;
+    transition: all 300ms ease-in;
+    z-index: -1;
+}
+
+.close-modal:hover::after {
+    width: 100%;
+    background-color: var(--primary);
+}
+
+#modal-slide1:target {
+    visibility: visible;
+    opacity: 100%;
+}
+#modal-slide2:target {
+    visibility: visible;
+    opacity: 100%;
+}
+#modal-slide3:target {
+    visibility: visible;
+    opacity: 100%;
+}
+
+@media (max-width: 760px) {
+    header {
+        flex-direction: column;
+    }
+    h1 {
+        margin-inline: auto;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .aside-skillset {
+        flex-basis: auto;
+    }
+
+    .aside-education {
+        flex-basis: auto;
+    }
+}
+
+@media (max-width: 520px) {
+    nav {
+        flex-direction: column;
+        margin-block: 1rem;
+    }
+
+    .main-about h2 {
+        font-size: 3rem;
+    }
+
+    .main-about p {
+        font-size: 2rem;
+    }
+
+    .main-contact form {
+        grid-template-columns: 1fr;
+    }
+
+    .send-button {
+        grid-column: span 1;
+    }
+}
