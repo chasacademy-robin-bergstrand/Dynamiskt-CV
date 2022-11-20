@@ -337,6 +337,14 @@ form textarea {
     height: 80%;
 }
 
+.four {
+    background-color: purple;
+}
+
+.four img {
+    height: 80%;
+}
+
 /* EXPERIMENT WITH MODAL IN CAROUSEL */
 .carousel div {
     position: relative;
@@ -431,6 +439,10 @@ form textarea {
     opacity: 100%;
 }
 #modal-slide3:target {
+    visibility: visible;
+    opacity: 100%;
+}
+#modal-slide4:target {
     visibility: visible;
     opacity: 100%;
 }
