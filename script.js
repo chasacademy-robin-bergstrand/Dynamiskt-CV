@@ -1,8 +1,17 @@
-const educationList = document.querySelector(".education-list");
-const employmentList = document.querySelector(".employment-list");
-const studying = document.querySelector(".main-education");
-
+let educationList;
+let employmentList;
+let studying;
 const jsonUrl = "data.json";
+
+if (document.querySelector(".education-list")) {
+    educationList = document.querySelector(".education-list");
+    employmentList = document.querySelector(".employment-list");
+    studying = document.querySelector(".main-education");
+
+    getEducation(jsonUrl);
+    getStudying(jsonUrl);
+    getEmployment(jsonUrl);
+}
 
 async function getData(url) {
     let response = await fetch(url);
@@ -32,16 +41,18 @@ async function getEmployment(url) {
     }
 }
 
-getEducation(jsonUrl);
-getStudying(jsonUrl);
-getEmployment(jsonUrl);
-
 // Getting project info
-const rockPaperScissorModal = document.querySelector("#modal-slide4");
-const rockPaperScissorLanguageList = rockPaperScissorModal.querySelector("ul");
-
 const projectUrl =
     "https://api.github.com/repos/chasacademy-robin-bergstrand/rock-paper-scissor";
+let rockPaperScissorModal;
+let rockPaperScissorLanguageList;
+
+if (document.querySelector("#modal-slide4")) {
+    rockPaperScissorModal = document.querySelector("#modal-slide4");
+    rockPaperScissorLanguageList = rockPaperScissorModal.querySelector("ul");
+
+    getProjectData(projectUrl);
+}
 
 async function getProjectData(projectUrl) {
     let data = await getData(projectUrl);
@@ -60,4 +71,36 @@ async function getProjectData(projectUrl) {
     }
 }
 
-getProjectData(projectUrl);
+// Making theme changer
+
+const themeButton = document.querySelector(".theme-button");
+const root = document.documentElement;
+
+/* themeButton.addEventListener("click", () => {
+    themeLight();
+}); */
+
+function themeDark() {
+    console.log("DARK");
+    themeButton.style.setProperty("background-color", "white");
+    themeButton.setAttribute("onClick", "themeLight()");
+    root.style.setProperty("--background", "black");
+    root.style.setProperty("--text-color", "white");
+    root.style.setProperty("--primary", "rgb(255, 0, 128)");
+    localStorage.setItem("theme", "dark");
+}
+function themeLight() {
+    console.log("LIGHT");
+    themeButton.style.setProperty("background-color", "black");
+    themeButton.setAttribute("onClick", "themeDark()");
+    root.style.setProperty("--background", "lightgrey");
+    root.style.setProperty("--text-color", "black");
+    root.style.setProperty("--primary", "rgb(0, 238, 255)");
+    localStorage.setItem("theme", "light");
+}
+
+if (localStorage.getItem("theme") == "light") {
+    themeLight();
+} else {
+    themeDark;
+}
