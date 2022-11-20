@@ -26,6 +26,7 @@ async function getEducation(url) {
     for (i in data.education) {
         educationList.innerHTML += `<li>${data.education[i]}</li>`;
     }
+    educationList.querySelector(".loading").classList.add("hidden");
 }
 
 async function getStudying(url) {
@@ -33,12 +34,14 @@ async function getStudying(url) {
     for (i in data.studying) {
         studying.innerHTML += `<p>${data.studying[i]}</p>`;
     }
+    studying.querySelector(".loading").classList.add("hidden");
 }
 async function getEmployment(url) {
     let data = await getData(url);
     for (i in data.employment) {
         employmentList.innerHTML += `<li><span>${data.employment[i].employer}</span> ${data.employment[i].position}</li>`;
     }
+    employmentList.querySelector(".loading").classList.add("hidden");
 }
 
 // Getting project info
@@ -69,6 +72,9 @@ async function getProjectData(projectUrl) {
         let language = i;
         rockPaperScissorLanguageList.innerHTML += `<li><span>${language}</span>: ${percentage}%</li>`;
     }
+    rockPaperScissorLanguageList
+        .querySelector(".loading")
+        .classList.add("hidden");
 }
 
 // Making theme changer
