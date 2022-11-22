@@ -12,6 +12,7 @@
     --primary: rgb(255, 0, 128);
     --background: black;
     --text-color: white;
+    --socialmedia-filter: brightness(100%);
 }
 
 body {
@@ -199,6 +200,10 @@ footer img {
 .social-media {
     display: flex;
     gap: 2em;
+}
+
+.social-media img {
+    filter: var(--socialmedia-filter);
 }
 
 .facebook:hover {

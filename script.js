@@ -89,6 +89,7 @@ function themeDark() {
     root.style.setProperty("--background", "black");
     root.style.setProperty("--text-color", "white");
     root.style.setProperty("--primary", "rgb(255, 0, 128)");
+    root.style.setProperty("--socialmedia-filter", "brightness(100%)");
     localStorage.setItem("theme", "dark");
 }
 function themeLight() {
@@ -98,6 +99,7 @@ function themeLight() {
     root.style.setProperty("--background", "lightgrey");
     root.style.setProperty("--text-color", "black");
     root.style.setProperty("--primary", "rgb(3, 0, 170)");
+    root.style.setProperty("--socialmedia-filter", "brightness(0%)");
     localStorage.setItem("theme", "light");
 }
 
