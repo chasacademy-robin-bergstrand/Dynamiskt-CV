@@ -82,10 +82,6 @@ async function getProjectData(projectUrl) {
 const themeButton = document.querySelector(".theme-button");
 const root = document.documentElement;
 
-/* themeButton.addEventListener("click", () => {
-    themeLight();
-}); */
-
 function themeDark() {
     console.log("DARK");
     themeButton.style.setProperty("background-color", "white");
@@ -108,5 +104,5 @@ function themeLight() {
 if (localStorage.getItem("theme") == "light") {
     themeLight();
 } else {
-    themeDark;
+    themeDark();
 }
