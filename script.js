@@ -101,7 +101,7 @@ function themeLight() {
     themeButton.setAttribute("onClick", "themeDark()");
     root.style.setProperty("--background", "lightgrey");
     root.style.setProperty("--text-color", "black");
-    root.style.setProperty("--primary", "rgb(0, 238, 255)");
+    root.style.setProperty("--primary", "rgb(3, 0, 170)");
     localStorage.setItem("theme", "light");
 }
 
