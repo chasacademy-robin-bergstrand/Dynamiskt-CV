@@ -234,7 +234,6 @@ form label {
 }
 
 form input[type="text"] {
-    /* width: 500px; */
     font-size: 1rem;
     padding: 0.5rem;
     background-color: unset;
@@ -352,7 +351,6 @@ form textarea {
     height: 80%;
 }
 
-/* EXPERIMENT WITH MODAL IN CAROUSEL */
 .carousel div {
     position: relative;
 }
